@@ -1,0 +1,26 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Editor-specific
+.idea/
+
+
+# Tailwind output (if using CLI or manual builds)
+tailwind.css
