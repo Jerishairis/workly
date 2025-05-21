@@ -1,26 +1,20 @@
-# Node dependencies
+# Root-level ignores
 node_modules/
-
-# Build output
-dist/
-build/
-
-# Vite cache
-.vite/
-
-# System files
 .DS_Store
-Thumbs.db
 
-# Logs
+# Ignore client-side dependencies and build
+/client/node_modules/
+/client/dist/
+/client/.vite/
+
+# Ignore server-side dependencies and build
+/server/node_modules/
+/server/dist/
+/server/build/
+/server/.env
+
+# Log files
 npm-debug.log*
 
-# Environment variables
-.env
-
-# Editor-specific
+# IDE/editor configs
 .idea/
-
-
-# Tailwind output (if using CLI or manual builds)
-tailwind.css
