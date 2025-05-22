@@ -9,7 +9,7 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:8000/');
+                const response = await fetch('http://localhost:8000');
                 const result = await response.json();
                 setData(result);
             } catch (error) {
@@ -25,7 +25,7 @@ function App() {
       <div>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+
       </p>
     </>
   )
