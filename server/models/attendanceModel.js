@@ -11,18 +11,17 @@ const attendanceSchema = new Schema({
     user_id: {
         type: String,
         required: true,
-        unique: true
     },
     date: {
-        type: date,
+        type: Date,
         required: true
     },
     check_in_time: {
-        type: date,
+        type: Date,
         required: true
     },
     check_out_time: {
-        type: date,
+        type: Date,
         required: true
     },
 }, {timestamps: true})
