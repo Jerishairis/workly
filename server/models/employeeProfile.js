@@ -1,15 +1,17 @@
 const mongoose = require('mongoose')
+const { v4: uuidv4} = require('uuid')
 
 const Schema = mongoose.Schema
 
 const employeeProfileSchema = new Schema({
     profile_id: {
         type: String,
-        required: true,
+        default: uuidv4,
         unique: true
     },
     user_id: {
         type: String,
+        ref: 'User',
         required: true,
         unique: true
     },
@@ -26,12 +28,12 @@ const employeeProfileSchema = new Schema({
         required: true
     },
     department_id: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Department',
         required: true,
-        unique: true
     },
     salary: {
-        type: String,
+        type: Number,
         required: true
     },
 }, {timestamps: true})

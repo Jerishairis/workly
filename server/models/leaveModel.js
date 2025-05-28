@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
-
+const {v4: uuidv4} = require('uuid')
 const Schema = mongoose.Schema
 
 const leaveSchema = new Schema({
     leave_id: {
         type: String,
-        required: true,
+        default: uuidv4,
         unique: true
     },
     user_id: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true,
-        unique: true
     },
     start_date: {
         type: Date,
@@ -21,9 +21,10 @@ const leaveSchema = new Schema({
         type: Date,
         required: true
     },
-    statue: {
+    status: {
         type: String,
-        required: true
+        enum: ['pending', 'approved', 'rejected'],
+        default: 'pending'
     },
     reason: {
         type: String,

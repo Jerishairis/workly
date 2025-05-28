@@ -10,17 +10,26 @@ const userSchema = new Schema({
         required: true},
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password_hash: {
         type: String,
         required: true
-    }, //double check
+    },
     role_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Role',
+        required: true
+    },
+    company_id: {
         type: String,
         required: true
-    }, //double check
-    is_active: Boolean,
+    },
+    is_active: {
+        type: Boolean,
+        default: true
+    },
     required: true
 }, {timestamps: true})
 

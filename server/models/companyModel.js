@@ -2,16 +2,17 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const AttendanceSchema = new Schema ({
+const companySchema = new Schema ({
     company_name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
-    name: {
+    admin_user: {
         type: String,
+        ref: 'User',
         required: true
-    },
-    created_at: Date
+    }
 }, {timestamps: true})
 
-module.exports = mongoose.model('Attendance', AttendanceSchema)
+module.exports = mongoose.model('Company', companySchema)
