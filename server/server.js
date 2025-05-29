@@ -3,6 +3,7 @@ const cors = require('cors');
 
 const express = require('express');
 const mongoose = require('mongoose');
+const router = require('./routes')
 
 const app = express();
 
@@ -11,9 +12,8 @@ app.use(cors({
     credentials: true
 }))
 
-app.get('/', (req, res) => {
-    res.json({mssg: "Welcome to Workly!"});
-})
+app.get('/api', router)
+
 
 mongoose.connect(process.env.DB_CONNECTION)
     .then(() => {
